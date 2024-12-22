@@ -20,7 +20,7 @@ body {
 }
 
 .preview__container {
-  background-image: url(/public/assets/images/preview-background.webp);
+  background-image: url(../../public/assets/images/preview-background.webp);
   background-size: cover;
   height: 854px;
 }
