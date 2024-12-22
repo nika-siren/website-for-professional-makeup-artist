@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@font-face {
+  font-family: "Moniqa";
+  src: url("../../public/assets/fonts/Moniqa-ExtLtCondHeading.ttf") format("truetype");
+}
+.preview__container--text,
+h2,
+.contacts__text {
+  font-family: "Moniqa", Times, sans-serif;
+  font-style: normal;
+  font-size: clamp(2.75rem, 2.561rem + 1.439vw, 4rem);
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+body {
+  font-family: "Inter", Times, sans-serif;
+  font-style: italic;
+  font-size: clamp(0.875rem, 0.818rem + 0.432vw, 1.25rem);
+}
+
+.preview__container {
+  background-image: url(/public/assets/images/preview-background.webp);
+  background-size: cover;
+  height: 854px;
+}
+
+h2,
+.contacts__text {
+  color: #724C9D;
+}/*# sourceMappingURL=main.css.map */

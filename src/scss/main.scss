@@ -1,0 +1,23 @@
+@import '_patterns.scss';
+@import '_variables.scss';
+@import '_about.scss';
+@import '_contacts.scss';
+@import '_header.scss';
+@import '_items.scss';
+@import '_portfolio.scss';
+@import '_services.scss';
+
+body {
+    @extend %secondary-font;
+}
+
+.preview__container--text,
+h2,
+.contacts__text {
+    @extend %primary-font;
+}
+
+h2,
+.contacts__text {
+    color: $purple-color;
+}
