@@ -1,0 +1,24 @@
+{
+  "name": "website-for-professional-makeup-artist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nika-siren/website-for-professional-makeup-artist.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nika-siren/website-for-professional-makeup-artist/issues"
+  },
+  "homepage": "https://github.com/nika-siren/website-for-professional-makeup-artist#readme",
+  "dependencies": {
+    "jquery": "^3.7.1"
+  }
+}
