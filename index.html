@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/styles/normalize.css" />
+    <link rel="stylesheet" href="./src/css/normalize.css" />
     <link rel="stylesheet" href="./src/css/main.css" />
     <title>FENIX SFX</title>
     <link
@@ -16,23 +16,29 @@
     <section class="preview__container" id="preview">
       <header class="header__container">
         <div class="header__container--logo">
-          <img src="" alt="Логотип" />
+          <img src="./public/assets/images/logo-2.webp" alt="Логотип" />
         </div>
-        <nav>
-          <ul>
-            <li><a href="#preview">главная</a></li>
-            <li><a href="#about">обо мне</a></li>
-            <li><a href="#services">услуги</a></li>
-            <li><a href="#portfolio">портфолио</a></li>
-            <li><a href="#items">товары</a></li>
-            <li><a href="#contacts">контакты</a></li>
+        <nav class="header__nav">
+          <ul class="header__ul">
+            <li class="header__li"><a href="#preview">главная</a></li>
+            <li class="header__li"><a href="#about">обо мне</a></li>
+            <li class="header__li"><a href="#services">услуги</a></li>
+            <li class="header__li"><a href="#portfolio">портфолио</a></li>
+            <li class="header__li"><a href="#items">товары</a></li>
+            <li class="header__li"><a href="#contacts">контакты</a></li>
           </ul>
         </nav>
       </header>
       <div class="preview__container--text">
-        Грим — это магия, которая превращает идеи в реальность
+        <p>Грим — это магия, которая превращает идеи в реальность</p>
       </div>
-      <a class="preview__container--btn" href="#">Связаться</a>
+      <div class="preview__container--btn--main">
+        <a
+          class="preview__container--btn"
+          href="https://t.me/anastasiyashva_makeup"
+          >Связаться</a
+        >
+      </div>
     </section>
 
     <section id="about">
@@ -157,6 +163,12 @@
               <li><a href="#contacts">контакты</a></li>
             </ul>
           </nav>
+          <div class="note-social">
+            <p>
+              *Meta признана экстремистской организацией и запрещена на
+              территории РФ
+            </p>
+          </div>
         </div>
       </div>
     </section>
