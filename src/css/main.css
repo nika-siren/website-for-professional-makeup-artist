@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @font-face {
   font-family: "Moniqa";
@@ -19,6 +20,100 @@ body {
   font-size: clamp(0.875rem, 0.818rem + 0.432vw, 1.25rem);
 }
 
+/* MOBILE HEADER */
+.hamburger {
+  display: block;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #FFFFFF;
+}
+
+.hamburger.active .bar {
+  background-color: #724C9D;
+}
+
+.nav-menu {
+  display: flex;
+  position: fixed;
+  left: -100%;
+  top: 0;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.nav-menu.active {
+  left: -10px;
+  padding: 20px;
+}
+
+.mobile-header__item {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #FFFFFF;
+  border: 2px solid #724C9D;
+  border-radius: 50px;
+  box-shadow: 2px 4px 8px 2px rgba(34, 60, 80, 0.2);
+  /*min 20px max 28px */
+  font-size: clamp(1.25rem, 1.11rem + 1.124vw, 1.75rem);
+  /* Увеличен размер шрифта */
+  color: #724C9D;
+  white-space: normal;
+  transition: transform 0.3s;
+  /*min15px max35px*/
+  max-height: clamp(0.938rem, 0.586rem + 2.809vw, 2.188rem);
+  padding: 20px 15px;
+  /*min 170px max 300px*/
+  width: clamp(10.625rem, 8.343rem + 18.258vw, 18.75rem);
+  transition: transform 0.3s;
+}
+
+.mobile-header__item:hover {
+  background-color: #724C9D;
+  border: 2px solid #724C9D;
+  color: #FFFFFF;
+  transform: scale(1.1);
+}
+
+.mobile-header__item:active {
+  background-color: #724C9D;
+  border: 2px solid #724C9D;
+  color: #FFFFFF;
+}
+
+/* MOBILE HEADER */
 .preview__container {
   display: flex;
   flex-direction: column;
@@ -91,6 +186,14 @@ body {
 }
 
 @media (min-width: 1024px) {
+  /* MOBILE HEADER */
+  .hamburger,
+  .nav-menu,
+  .bar {
+    display: none;
+    cursor: pointer;
+  }
+  /* MOBILE HEADER */
   .preview__container {
     height: clamp(40.875rem, 10.106rem + 48.077vw, 53.375rem);
     gap: clamp(0.625rem, -0.913rem + 2.404vw, 1.25rem);
