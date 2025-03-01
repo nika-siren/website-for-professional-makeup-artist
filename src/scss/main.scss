@@ -12,12 +12,24 @@ body {
 }
 
 .preview__container--text,
+.about__experience,
 h2,
 .contacts__text {
     @extend %primary-font;
 }
 
+.about__experience--bold,
+.about__experience--bold-2 {
+    @extend %third-font;
+}
+
 h2,
 .contacts__text {
+    /*-84*/
+    font-size: clamp(1.313rem, 0.485rem + 5.294vw, 5.25rem);
     color: $purple-color;
+}
+
+h2 {
+    text-align: center;
 }
