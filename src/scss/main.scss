@@ -23,9 +23,16 @@ h2,
     @extend %third-font;
 }
 
+/* + размер текста с портфолио Больше фотографий добавить сюда */
+.about__text,
+.items__text {
+    /*9-18*/
+    font-size: clamp(0.563rem, 0.444rem + 0.756vw, 1.125rem);
+}
+
 h2,
 .contacts__text {
-    /*-84*/
+    /*21-84*/
     font-size: clamp(1.313rem, 0.485rem + 5.294vw, 5.25rem);
     color: $purple-color;
 }

@@ -1,18 +1,17 @@
 .about__text--main {
     display: grid;
     justify-items: center;
+    align-items: start;
     grid-template-columns: 1fr 1fr;
     gap: 0;
-    margin: 0 100px;
 }
 
 .about__text {
-    max-width: 475px;
-    font-weight: 200;
-}
-
-.about__text p {
+    display: flex;
+    flex-direction: column;
     padding-top: 20px;
+    padding-right: 90px;
+    font-weight: 200;
 }
 
 .about__text p,
@@ -25,8 +24,6 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, auto);
     gap: 0;
-    font-size: 40px;
-    padding-top: 20px;
 }
 
 .about__experience,
@@ -41,21 +38,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    line-height: 40px;
     text-align: center;
-}
-
-.about__experience--bold {
-    font-size: 84px;
-}
-
-.about__experience--bold-2 {
-    padding-left: 7px;
-    font-size: 50px;
-}
-
-.about__experience--next {
-    max-width: 120px;
 }
 
 .about__experience--text:nth-child(1) {
@@ -72,4 +55,47 @@
     grid-column: 3;
     grid-row: 3;
     padding-left: 45px;
+}
+
+@media (min-width: 1024px) {
+    .about__text--main {
+        // display: grid;
+        // justify-items: center;
+        // grid-template-columns: 1fr 1fr;
+        // gap: 0;
+        /*70-100*/
+        margin: 0 clamp(4.375rem, -0.24rem + 7.212vw, 6.25rem);
+    }
+
+    .about__text {
+        /*15-20*/
+        gap: clamp(0.938rem, 0.168rem + 1.202vw, 1.25rem);
+        /*375-475*/
+        max-width: clamp(23.438rem, 8.053rem + 24.038vw, 29.688rem);
+        padding-top: 20px;
+        padding-right: 90px;
+    }
+
+    .about__experience {
+        /*30-40*/
+        font-size: clamp(1.875rem, 0.337rem + 2.404vw, 2.5rem);
+        /*15-20*/
+        padding-top: clamp(0.938rem, 0.168rem + 1.202vw, 1.25rem);
+    }
+
+    .about__experience--text {
+        /*30-40*/
+        line-height: clamp(1.875rem, 0.337rem + 2.404vw, 2.5rem);
+    }
+
+    .about__experience--bold {
+        /*54-84*/
+        font-size: clamp(3.375rem, -1.24rem + 7.212vw, 5.25rem);
+    }
+
+    .about__experience--bold-2 {
+        padding-left: 7px;
+        /*35-50*/
+        font-size: clamp(2.188rem, -0.12rem + 3.606vw, 3.125rem);
+    }
 }
