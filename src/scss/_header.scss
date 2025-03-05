@@ -266,8 +266,8 @@
 @media (max-width: 768px) {
 
     .preview__container {
-        /*150-450 for 250-768*/
-        height: clamp(9.375rem, 0.326rem + 57.915vw, 28.125rem);
+        /*200-500 for 340-768*/
+        height: clamp(12.5rem, -2.395rem + 70.093vw, 31.25rem);
         /*1-50*/
         gap: clamp(0.063rem, -1.416rem + 9.459vw, 3.125rem);
     }
@@ -300,7 +300,7 @@
 
     .preview__container--btn--main {
         display: flex;
-        // justify-content: center;
+        // align-content: center;
         // padding-left: 0;
     }
 
