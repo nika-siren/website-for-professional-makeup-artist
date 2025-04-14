@@ -366,7 +366,7 @@ body {
 
 .preview__container--btn {
   background-color: rgba(245, 245, 245, 0.18);
-  border: 2px solid #FFFFFF;
+  border: 1px solid #FFFFFF;
   border-radius: 76px;
   font-weight: 100;
   text-transform: uppercase;
@@ -435,8 +435,8 @@ body {
 }
 @media (max-width: 768px) {
   .preview__container {
-    /*150-450 for 250-768*/
-    height: clamp(9.375rem, 0.326rem + 57.915vw, 28.125rem);
+    /*200-500 for 340-768*/
+    height: clamp(12.5rem, -2.395rem + 70.093vw, 31.25rem);
     /*1-50*/
     gap: clamp(0.063rem, -1.416rem + 9.459vw, 3.125rem);
   }
@@ -468,8 +468,8 @@ body {
   .preview__container--btn {
     /*1-12 25-73*/
     padding: clamp(0.063rem, -0.269rem + 2.124vw, 0.75rem) clamp(1.563rem, 0.115rem + 9.266vw, 4.563rem);
-    /*0.2-2*/
-    border: clamp(0.013rem, -0.042rem + 0.347vw, 0.125rem) solid #FFFFFF;
+    /*0.2-0.8*/
+    border: clamp(0.013rem, -0.012rem + 0.128vw, 0.05rem) solid #FFFFFF;
     /*3-16*/
     font-size: clamp(0.188rem, -0.205rem + 2.51vw, 1rem);
   }
@@ -477,6 +477,94 @@ body {
   .preview__container--btn--main {
     /*30-50*/
     padding-left: clamp(1.875rem, 1.272rem + 3.861vw, 3.125rem);
+  }
+}
+.services__items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  font-weight: 200;
+  /*3-25*/
+  gap: clamp(0.188rem, -0.067rem + 1.358vw, 1.563rem);
+}
+
+.services__item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80vw;
+  border: 1px solid #724C9D;
+  background-color: rgba(114, 76, 157, 0.23);
+}
+
+.services__item,
+.services__img img {
+  /*3-20*/
+  border-radius: clamp(0.188rem, -0.009rem + 1.049vw, 1.25rem);
+  /*70-400*/
+  height: clamp(4.375rem, 0.556rem + 20.37vw, 25rem);
+}
+
+.services__img img {
+  width: 100%;
+}
+
+.services__text--container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.services__text,
+.services__btn {
+  /*12-20*/
+  font-size: clamp(0.75rem, 0.179rem + 1.19vw, 1.25rem);
+  color: #724C9D;
+}
+
+.services__text {
+  text-transform: uppercase;
+  /*100-400*/
+  max-width: clamp(6.25rem, 2.311rem + 25.21vw, 25rem);
+}
+
+.services__btn {
+  text-decoration: none;
+  background-color: #FFFFFF;
+  border: 1px solid #724C9D;
+  border-radius: 76px;
+  font-weight: 200;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .services__btn {
+    padding: clamp(0.963rem, 0.039rem + 1.442vw, 1.337rem) clamp(5rem, 0.385rem + 7.212vw, 6.875rem);
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .services__btn {
+    /*12-15 73-80*/
+    padding: clamp(0.75rem, 0.188rem + 1.172vw, 0.938rem) clamp(4.563rem, 3.25rem + 2.734vw, 5rem);
+  }
+}
+@media (max-width: 768px) {
+  .services__text,
+  .services__btn {
+    /*3-12*/
+    font-size: clamp(0.188rem, -0.084rem + 1.737vw, 0.75rem);
+  }
+  .services__btn {
+    /*1-12 25-73*/
+    padding: clamp(0.063rem, -0.269rem + 2.124vw, 0.75rem) clamp(1.563rem, 0.115rem + 9.266vw, 4.563rem);
+    /*0.2-0.8*/
+    border: clamp(0.013rem, -0.012rem + 0.128vw, 0.05rem) solid #724C9D;
   }
 }
 /* + размер текста с портфолио Больше фотографий добавить сюда */
