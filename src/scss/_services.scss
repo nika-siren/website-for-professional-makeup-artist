@@ -18,10 +18,16 @@
 
 .services__item,
 .services__img img {
-    /*3-20*/
-    border-radius: clamp(0.188rem, -0.009rem + 1.049vw, 1.25rem);
     /*70-400*/
     height: clamp(4.375rem, 0.556rem + 20.37vw, 25rem);
+}
+
+.services__item,
+.services__img img,
+.services__img--modal {
+    /*3-20*/
+    border-radius: clamp(0.188rem, -0.009rem + 1.049vw, 1.25rem);
+
 }
 
 .services__img img {
@@ -63,13 +69,104 @@
     position: relative;
 }
 
+// .jBox-Modal .jBox-title {
+
+// }
+
+.jBox-Modal {
+    padding-bottom: 30px;
+    /*-991*/
+    // max-height: 960px;
+}
+
+.jBox-Modal .jBox-container {
+    background: #ded6e8;
+
+}
+
+.services__item--modal {
+    display: flex;
+    justify-content: space-around;
+}
+
+.services__h2--modal {
+    display: flex;
+    justify-content: flex-start;
+    letter-spacing: 5px;
+    margin: 0;
+}
+
+.services__img--modal {
+    align-self: center;
+    height: 85%;
+}
+
+.services__img--modal--short {
+    height: 200px;
+    /* высота для services-modal-3 и services-modal-5 */
+}
+
+.services__text--modal {
+    text-align: center;
+    align-self: center;
+    // padding-left: 300px;
+}
+
 @media (min-width: 1024px) {
+    .services__h2--modal {
+        /*9-13*/
+        padding-top: clamp(0.563rem, 0.277rem + 0.446vw, 0.813rem);
+    }
+
+    .services__item--modal {
+        // justify-content: center;
+        // align-content: center;
+        // align-items: center;
+        /* 630-1300 1024-1920*/
+        height: clamp(39.375rem, -8.482rem + 74.777vw, 81.25rem);
+    }
+
+    .services__img--modal {
+        /*470-930*/
+        max-width: clamp(29.375rem, -3.482rem + 51.339vw, 58.125rem);
+    }
+
+    .services__text--modal {
+        /*300-450*/
+        max-width: clamp(15.625rem, 1.339rem + 22.321vw, 28.125rem);
+    }
+
+    .services__img img {
+        max-width: 800px;
+    }
+
     .services__btn {
         padding: clamp(0.963rem, 0.039rem + 1.442vw, 1.337rem) clamp(5rem, 0.385rem + 7.212vw, 6.875rem);
     }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+
+    .services__h2--modal {
+        /*7-9*/
+        padding-top: clamp(0.438rem, 0.063rem + 0.781vw, 0.563rem);
+    }
+
+    .services__item--modal {
+        /* 530-630*/
+        height: clamp(33.125rem, 14.375rem + 39.063vw, 39.375rem);
+    }
+
+    .services__img--modal {
+        /*320-470*/
+        max-width: clamp(20rem, -8.125rem + 58.594vw, 29.375rem);
+    }
+
+    .services__text--modal {
+        /*250-300*/
+        max-width: clamp(12.5rem, -6.25rem + 39.063vw, 18.75rem);
+    }
+
     .services__btn {
         /*12-15 73-80*/
         padding: clamp(0.75rem, 0.188rem + 1.172vw, 0.938rem) clamp(4.563rem, 3.25rem + 2.734vw, 5rem);
