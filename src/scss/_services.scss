@@ -1,3 +1,28 @@
+/*hide scroll*/
+
+.jBox-Modal {
+    .jBox-container {
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .jBox-content {
+        overflow-y: auto;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+/*hide scroll*/
+
 .services__items {
     display: flex;
     flex-direction: column;
@@ -175,6 +200,37 @@
 
 @media (max-width: 768px) {
 
+
+
+    /**/
+
+    .services__h2--modal {
+        /*5-7*/
+        padding-top: clamp(0.313rem, 0.232rem + 0.427vw, 0.438rem);
+    }
+
+    .services__item--modal {
+        /*10-25*/
+        padding-top: clamp(0.625rem, 0.024rem + 3.205vw, 1.563rem);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        /*5-15*/
+        gap: clamp(0.313rem, 0.011rem + 1.931vw, 0.938rem);
+    }
+
+    .services__img--modal {
+        /*200-320*/
+        max-width: clamp(12.5rem, 8.88rem + 23.166vw, 20rem);
+        justify-content: center;
+    }
+
+    .services__text--modal {
+        /*210-400*/
+        max-width: clamp(13.125rem, 7.394rem + 36.68vw, 25rem);
+    }
+
     .services__text,
     .services__btn {
         /*3-12*/
@@ -186,5 +242,34 @@
         padding: clamp(0.063rem, -0.269rem + 2.124vw, 0.75rem) clamp(1.563rem, 0.115rem + 9.266vw, 4.563rem);
         /*0.2-0.8*/
         border: clamp(0.013rem, -0.012rem + 0.128vw, 0.05rem) solid $purple-color;
+    }
+}
+
+@media (max-width: 540px) {
+    .jBox-Modal .jBox-container .jBox-content {
+        margin: 0 auto;
+    }
+
+    .jBox-container {
+        /*290-420*/
+        width: clamp(18.125rem, 11.121rem + 44.828vw, 26.25rem);
+        // margin-left: 6%;
+    }
+
+    .services__h2--modal {
+        /*2-3*/
+        letter-spacing: clamp(0.125rem, 0.047rem + 0.417vw, 0.188rem);
+        // line-height: 1;
+    }
+
+    .services__item--modal {
+        /*350-380 430-540*/
+        max-width: clamp(21.875rem, 14.545rem + 27.273vw, 23.75rem);
+    }
+}
+
+@media (max-width: 430px) {
+    .jBox-Modal .jBox-container .jBox-content {
+        margin: 0 auto;
     }
 }
