@@ -14,7 +14,8 @@ body {
 .preview__container--text,
 .about__experience,
 h2,
-.contacts__text {
+.contacts__text,
+.services__h2--modal {
     @extend %primary-font;
 }
 
@@ -25,13 +26,15 @@ h2,
 
 /* + размер текста с портфолио Больше фотографий добавить сюда */
 .about__text,
-.items__text {
-    /*9-18*/
-    font-size: clamp(0.563rem, 0.444rem + 0.756vw, 1.125rem);
+.items__text,
+.services__text--modal {
+    /*5-30*/
+    font-size: clamp(0.313rem, 0.079rem + 1.497vw, 1.875rem);
 }
 
 h2,
-.contacts__text {
+.contacts__text,
+.services__h2--modal {
     /*21-84*/
     font-size: clamp(1.313rem, 0.485rem + 5.294vw, 5.25rem);
     color: $purple-color;
