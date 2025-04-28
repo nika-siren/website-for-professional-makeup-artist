@@ -42,35 +42,37 @@ $(document).ready(function () {
     e.preventDefault();
     const item = $(this).closest(".services__item");
 
-    const title = item.data("title"); // Заголовок
-    const content = item.data("content"); // Содержание
-    const image = item.data("image"); // Путь к изображению
+    const title = item.data("title");
+    const content = item.data("content");
+    const image = item.data("image");
 
     let imgClass = "services__img--modal";
+    let modalClass = "services__item--modal";
+    let textClass = "services__text--modal";
 
     if (
       image.includes("services-modal-3") ||
       image.includes("services-modal-4") ||
       image.includes("services-modal-5")
     ) {
-      imgClass = "services__img--modal--short"; // изменяем класс для уменьшенной высоты
+      imgClass = "services__img--modal--short";
+      modalClass = "services__item--modal--short";
+      textClass = "services__text--modal--short";
     }
 
-    // Создаем модальное окно jBox
     const modal = new jBox("Modal", {
       width: "85vw",
       /*400-850 300-1920*/
       height: "clamp(28.125rem, 23.495rem + 24.691vw, 53.125rem)",
       // createOnInit: true,
       content: `
-        <div class="services__item--modal">
+        <div class="${modalClass}">
           <img class="${imgClass}" src="${image}" alt="${title}">
-          <p class="services__text--modal">${content}</p>
+          <p class="${textClass}">${content}</p>
         </div>`,
-      title: `<span class="services__h2--modal">${title}</span>`, // Добавляем класс к заголовку через HTML
+      title: `<span class="services__h2--modal">${title}</span>`,
     });
 
-    // Показываем модальное окно
     modal.open();
   });
 });
