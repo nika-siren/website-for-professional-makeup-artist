@@ -608,6 +608,7 @@ body {
 }
 
 .services__text--modal,
+.services__text--modal--short,
 .services__item--modal--short {
   text-align: center;
   align-self: center;
@@ -684,6 +685,19 @@ body {
   .services__text--modal {
     /*250-300*/
     max-width: clamp(12.5rem, -6.25rem + 39.063vw, 18.75rem);
+  }
+  .services__item--modal--short {
+    /*620-800*/
+    height: clamp(38.75rem, 5rem + 70.313vw, 50rem);
+    gap: 15px;
+  }
+  .services__text--modal--short {
+    /*510-590*/
+    width: clamp(31.875rem, 16.875rem + 31.25vw, 36.875rem);
+  }
+  .services__img--modal--short {
+    /*380-450*/
+    height: clamp(23.75rem, 10.625rem + 27.344vw, 28.125rem);
   }
   .services__btn {
     /*12-15 73-80*/

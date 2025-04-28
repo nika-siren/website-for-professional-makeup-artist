@@ -143,6 +143,7 @@
 }
 
 .services__text--modal,
+.services__text--modal--short,
 .services__item--modal--short {
     text-align: center;
     align-self: center;
@@ -188,8 +189,6 @@
         height: clamp(39.375rem, -8.482rem + 74.777vw, 81.25rem);
     }
 
-
-
     .services__item--modal,
     .services__item--modal--short {
         gap: 20px;
@@ -209,8 +208,6 @@
         /*300-450*/
         max-width: clamp(15.625rem, 1.339rem + 22.321vw, 28.125rem);
     }
-
-
 
     .services__img img {
         max-width: 800px;
@@ -241,6 +238,22 @@
     .services__text--modal {
         /*250-300*/
         max-width: clamp(12.5rem, -6.25rem + 39.063vw, 18.75rem);
+    }
+
+    .services__item--modal--short {
+        /*620-800*/
+        height: clamp(38.75rem, 5rem + 70.313vw, 50rem);
+        gap: 15px;
+    }
+
+    .services__text--modal--short {
+        /*510-590*/
+        width: clamp(31.875rem, 16.875rem + 31.25vw, 36.875rem);
+    }
+
+    .services__img--modal--short {
+        /*380-450*/
+        height: clamp(23.75rem, 10.625rem + 27.344vw, 28.125rem);
     }
 
     .services__btn {
