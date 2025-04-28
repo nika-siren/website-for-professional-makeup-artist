@@ -608,6 +608,7 @@ body {
 }
 
 .services__text--modal,
+.services__text--modal--short,
 .services__item--modal--short {
   text-align: center;
   align-self: center;
@@ -685,6 +686,19 @@ body {
     /*250-300*/
     max-width: clamp(12.5rem, -6.25rem + 39.063vw, 18.75rem);
   }
+  .services__item--modal--short {
+    /*620-800*/
+    height: clamp(38.75rem, 5rem + 70.313vw, 50rem);
+    gap: 15px;
+  }
+  .services__text--modal--short {
+    /*510-590*/
+    width: clamp(31.875rem, 16.875rem + 31.25vw, 36.875rem);
+  }
+  .services__img--modal--short {
+    /*380-450*/
+    height: clamp(23.75rem, 10.625rem + 27.344vw, 28.125rem);
+  }
   .services__btn {
     /*12-15 73-80*/
     padding: clamp(0.75rem, 0.188rem + 1.172vw, 0.938rem) clamp(4.563rem, 3.25rem + 2.734vw, 5rem);
@@ -713,6 +727,19 @@ body {
   .services__text--modal {
     /*210-400*/
     max-width: clamp(13.125rem, 7.394rem + 36.68vw, 25rem);
+  }
+  .services__item--modal--short {
+    /*400-550*/
+    height: clamp(25rem, 18.99rem + 32.051vw, 34.375rem);
+    gap: 15px;
+  }
+  .services__text--modal--short {
+    /*200-450*/
+    width: clamp(12.5rem, 2.484rem + 53.419vw, 28.125rem);
+  }
+  .services__img--modal--short {
+    /*150-350*/
+    height: clamp(9.375rem, 1.362rem + 42.735vw, 21.875rem);
   }
   .services__text,
   .services__btn {
