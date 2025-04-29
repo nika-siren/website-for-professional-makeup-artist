@@ -26,15 +26,6 @@ document.querySelectorAll(".mobile-header__item").forEach((n) =>
   })
 );
 
-/* modal */
-// new jBox("Modal", {
-//   width: 300,
-//   height: 100,
-//   attach: "#my-modal",
-//   title: "My Modal Window",
-//   content: "Hello there!",
-// });
-
 /* MODAL 2 0 */
 
 $(document).ready(function () {
@@ -76,3 +67,18 @@ $(document).ready(function () {
     modal.open();
   });
 });
+
+/* masonry*/
+
+$(document).ready(function () {
+  var $gallery = $(".portfolio__gallery").imagesLoaded(function () {
+    $gallery.masonry({
+      itemSelector: ".portfolio__img",
+      columnWidth: 323, // Базовая ширина колонки
+      gutter: 20, // Отступ между элементами
+      fitWidth: true, // Центрирование сетки
+      stagger: 30, // Плавное позиционирование
+    });
+  });
+});
+
