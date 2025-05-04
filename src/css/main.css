@@ -484,54 +484,10 @@ body {
   position: relative;
 }
 
-.portfolio__text {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  margin: 0;
-  padding-right: 130px;
-}
-
-.portfolio__circle-link {
-  display: block;
-  text-decoration: none;
-}
-
-.portfolio__circle {
-  width: 300px;
-  height: 300px;
-  border: 1px solid #724C9D;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  transition: all 0.3s ease;
-}
-.portfolio__circle span {
-  font-weight: 200;
-  color: #724C9D;
-  text-align: center;
-  padding: 10px;
-  transition: color 0.3s ease;
-  width: 150px;
-}
-.portfolio__circle:hover {
-  transform: scale(1.05);
-  background-color: #FFFFFF;
-  border: 1px solid #FFFFFF;
-  box-shadow: 0 0 5px #FFFFFF;
-}
-.portfolio__circle:hover span {
-  color: #724C9D;
-}
-
 /* gallery*/
 .portfolio__gallery--main {
   max-width: 1100px;
-  padding-left: 200px;
+  margin: 0 auto;
 }
 
 .portfolio__gallery--main::before {
@@ -540,6 +496,32 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
+  height: 430px;
+  background: rgba(114, 76, 157, 0.23);
+  z-index: -1;
+}
+
+/*прямоугольник сверху*/
+.portfolio__gallery--main::after {
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 430px;
+  background: rgba(114, 76, 157, 0.23);
+  z-index: -1;
+}
+
+/* прямоугольник снизу */
+.portfolio__container::after {
+  content: "";
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   height: 430px;
   background: rgba(114, 76, 157, 0.23);
@@ -560,51 +542,12 @@ body {
   display: block;
 }
 
-.portfolio__img-1,
-.portfolio__img-3,
-.portfolio__img-5,
-.portfolio__img-7 {
-  width: 323px;
-}
-
-.portfolio__img-2,
-.portfolio__img-4,
-.portfolio__img-6 {
-  width: 320px;
-}
-
-.portfolio__img-1 {
-  height: 503px;
-}
-
-.portfolio__img-2 {
-  height: 320px;
-}
-
-.portfolio__img-3 {
-  height: 503px;
-}
-
-.portfolio__img-4 {
-  height: 320px;
-}
-
-.portfolio__img-5 {
-  height: 502px;
-}
-
-.portfolio__img-6 {
-  height: 320px;
-}
-
-.portfolio__img-7 {
-  height: 502px;
-}
-
-/* отступы между колонками */
-.portfolio__img:nth-child(3n+1),
-.portfolio__img:nth-child(3n+2) {
+.portfolio__img {
   margin-right: 20px;
+}
+
+.portfolio__img:nth-child(3n) {
+  margin-right: 0;
 }
 
 /*hide scroll*/

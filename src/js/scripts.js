@@ -70,15 +70,246 @@ $(document).ready(function () {
 
 /* masonry*/
 
-$(document).ready(function () {
-  var $gallery = $(".portfolio__gallery").imagesLoaded(function () {
-    $gallery.masonry({
-      itemSelector: ".portfolio__img",
-      columnWidth: 323, // Базовая ширина колонки
-      gutter: 20, // Отступ между элементами
-      fitWidth: true, // Центрирование сетки
-      stagger: 30, // Плавное позиционирование
+// $(document).ready(function () {
+//   var $gallery = $(".portfolio__gallery").imagesLoaded(function () {
+//     $gallery.masonry({
+//       itemSelector: ".portfolio__img",
+//       columnWidth: 323, // Базовая ширина колонки
+//       gutter: 20, // Отступ между элементами
+//       fitWidth: true, // Центрирование сетки
+//       stagger: 30, // Плавное позиционирование
+//     });
+//   });
+// });
+
+/* gallery */
+
+const portfolioImages = [
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-1.webp",
+    width: 323,
+    height: 503,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-2.webp",
+    width: 320,
+    height: 320,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-3.webp",
+    width: 323,
+    height: 503,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-4.webp",
+    width: 320,
+    height: 320,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-5.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-7.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-6.webp",
+    width: 320,
+    height: 320,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-8.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-9.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-10.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-11.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-12.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-13.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-14.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-15.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-16.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-17.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-18.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-19.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-20.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-21.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-22.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-23.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-24.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-25.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-26.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-27.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-28.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-29.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-30.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-31.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-32.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-33.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-35.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-36.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-37.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-38.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-39.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-34.webp",
+    width: 323,
+    height: 502,
+  },
+];
+
+function createGallery() {
+  const gallery = document.querySelector(".portfolio__gallery");
+
+  portfolioImages.forEach((img, index) => {
+    const imgContainer = document.createElement("div");
+    imgContainer.className = "portfolio__img";
+    imgContainer.style.width = `${img.width}px`;
+
+    const imgElement = document.createElement("img");
+    imgElement.src = img.src;
+    imgElement.alt = `Портфолио изображение ${index + 1}`;
+
+    imgContainer.appendChild(imgElement);
+    gallery.appendChild(imgContainer);
+  });
+
+  /* Masonry после загрузки изображений*/
+  $(document).ready(function () {
+    var $gallery = $(".portfolio__gallery").imagesLoaded(function () {
+      $gallery.masonry({
+        itemSelector: ".portfolio__img",
+        columnWidth: 323,
+        gutter: 20,
+        fitWidth: true,
+        stagger: 30,
+      });
     });
   });
-});
+}
 
+window.addEventListener("DOMContentLoaded", createGallery);
