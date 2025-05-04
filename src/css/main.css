@@ -534,20 +534,63 @@ body {
 
 .portfolio__img {
   float: left;
+  margin-right: 20px;
   margin-bottom: 20px;
 }
 .portfolio__img img {
   width: 100%;
   height: auto;
   display: block;
+  transition: all 0.3s ease;
 }
 
-.portfolio__img {
-  margin-right: 20px;
+.portfolio__img img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8666666667);
 }
 
 .portfolio__img:nth-child(3n) {
   margin-right: 0;
+}
+
+/* GALLERY MODAL*/
+body .jBox-overlay.jBox-overlay-Image {
+  background: rgba(0, 0, 0, 0.8666666667);
+}
+
+.jbox-image-container .jbox-content {
+  padding: 20px;
+}
+
+.jBox-wrapper .jBox-image-label-wrapper {
+  top: 40%;
+}
+
+body .jBox-image-label-wrapper .jBox-image-pointer-prev {
+  left: 7%;
+}
+
+.jBox-image-label-wrapper .jBox-image-pointer-next {
+  right: 7%;
+}
+
+.jBox-image-label-wrapper .jBox-image-pointer-prev,
+.jBox-image-label-wrapper .jBox-image-pointer-next {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  margin: 0;
+}
+
+.jBox-image-label-container {
+  opacity: 0;
+}
+
+.jbox-close {
+  color: white;
+  font-size: 30px;
+  right: 20px;
+  top: 20px;
 }
 
 /*hide scroll*/
