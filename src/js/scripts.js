@@ -68,20 +68,6 @@ $(document).ready(function () {
   });
 });
 
-/* masonry*/
-
-// $(document).ready(function () {
-//   var $gallery = $(".portfolio__gallery").imagesLoaded(function () {
-//     $gallery.masonry({
-//       itemSelector: ".portfolio__img",
-//       columnWidth: 323, // Базовая ширина колонки
-//       gutter: 20, // Отступ между элементами
-//       fitWidth: true, // Центрирование сетки
-//       stagger: 30, // Плавное позиционирование
-//     });
-//   });
-// });
-
 /* gallery */
 
 const portfolioImages = [
@@ -271,6 +257,21 @@ const portfolioImages = [
     height: 502,
   },
   {
+    src: "./public/assets/images/portfolio/portfolio-img-40.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-41.webp",
+    width: 323,
+    height: 502,
+  },
+  {
+    src: "./public/assets/images/portfolio/portfolio-img-42.webp",
+    width: 323,
+    height: 502,
+  },
+  {
     src: "./public/assets/images/portfolio/portfolio-img-39.webp",
     width: 323,
     height: 502,
@@ -286,6 +287,11 @@ function createGallery() {
   const gallery = document.querySelector(".portfolio__gallery");
 
   portfolioImages.forEach((img, index) => {
+    const link = document.createElement("a");
+    link.href = img.src;
+    link.setAttribute("data-jbox-image", "portfolioGallery");
+    link.setAttribute("title", `Изображение ${index + 1}`);
+
     const imgContainer = document.createElement("div");
     imgContainer.className = "portfolio__img";
     imgContainer.style.width = `${img.width}px`;
@@ -293,9 +299,12 @@ function createGallery() {
     const imgElement = document.createElement("img");
     imgElement.src = img.src;
     imgElement.alt = `Портфолио изображение ${index + 1}`;
+    // imgElement.dataset.index = index; // Добавляем data-атрибут с индексом
 
     imgContainer.appendChild(imgElement);
-    gallery.appendChild(imgContainer);
+    link.appendChild(imgContainer);
+    gallery.appendChild(link);
+    // gallery.appendChild(imgContainer);
   });
 
   /* Masonry после загрузки изображений*/
@@ -309,6 +318,31 @@ function createGallery() {
         stagger: 30,
       });
     });
+  });
+
+  // Инициализация jBox
+  new jBox("Image", {
+    group: "portfolioGallery",
+    infinite: true,
+    closeOnClick: "overlay",
+    closeOnEsc: true,
+    ajax: false,
+    getTitle: "title",
+    offset: {
+      top: 20,
+      bottom: 20,
+    },
+    onOpen: function () {
+      this.container.on("click", (e) => {
+        if (
+          !$(e.target).closest(
+            ".jbox-content, .jbox-image-prev, .jbox-image-next"
+          ).length
+        ) {
+          this.close();
+        }
+      });
+    },
   });
 }
 
