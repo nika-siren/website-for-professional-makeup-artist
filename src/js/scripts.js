@@ -70,280 +70,365 @@ $(document).ready(function () {
 
 /* gallery */
 
-const portfolioImages = [
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-1.webp",
-    width: 323,
-    height: 503,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-2.webp",
-    width: 320,
-    height: 320,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-3.webp",
-    width: 323,
-    height: 503,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-4.webp",
-    width: 320,
-    height: 320,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-5.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-7.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-6.webp",
-    width: 320,
-    height: 320,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-8.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-9.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-10.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-11.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-12.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-13.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-14.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-15.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-16.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-17.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-18.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-19.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-20.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-21.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-22.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-23.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-24.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-25.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-26.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-27.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-28.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-29.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-30.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-31.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-32.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-33.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-35.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-36.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-37.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-38.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-40.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-41.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-42.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-39.webp",
-    width: 323,
-    height: 502,
-  },
-  {
-    src: "./public/assets/images/portfolio/portfolio-img-34.webp",
-    width: 323,
-    height: 502,
-  },
-];
+let isSliderActive = false;
 
-function createGallery() {
-  const gallery = document.querySelector(".portfolio__gallery");
+function manageSlider() {
+  const $gallery = $(".portfolio__gallery");
+  const $slider = $(".portfolio-slider-mobile");
 
-  portfolioImages.forEach((img, index) => {
-    const link = document.createElement("a");
-    link.href = img.src;
-    link.setAttribute("data-jbox-image", "portfolioGallery");
-    link.setAttribute("title", `Изображение ${index + 1}`);
+  // if ($(window).width() <= 768) {
+    // Если слайдер еще не активирован
+    if (!isSliderActive) {
+      // Клонируем изображения только один раз
+      $gallery
+        .find(".portfolio__img")
+        .clone()
+        .removeClass("portfolio__img")
+        .addClass("portfolio__img--slider")
+        .appendTo($slider);
 
-    const imgContainer = document.createElement("div");
-    imgContainer.className = "portfolio__img";
-    imgContainer.style.width = `${img.width}px`;
-
-    const imgElement = document.createElement("img");
-    imgElement.src = img.src;
-    imgElement.alt = `Портфолио изображение ${index + 1}`;
-    // imgElement.dataset.index = index; // Добавляем data-атрибут с индексом
-
-    imgContainer.appendChild(imgElement);
-    link.appendChild(imgContainer);
-    gallery.appendChild(link);
-    // gallery.appendChild(imgContainer);
-  });
-
-  /* Masonry после загрузки изображений*/
-  $(document).ready(function () {
-    var $gallery = $(".portfolio__gallery").imagesLoaded(function () {
-      $gallery.masonry({
-        itemSelector: ".portfolio__img",
-        columnWidth: 323,
-        gutter: 20,
-        fitWidth: true,
-        stagger: 30,
+      $slider.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        adaptiveHeight: true,
+        responsive: [
+          // {
+          //   breakpoint: 794,
+          //   settings: {
+          //     slidesToShow: 3,
+          //     slidesToScroll: 3,
+          //   },
+          // },
+          {
+            breakpoint: 638,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 455,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
       });
-    });
-  });
-
-  // Инициализация jBox
-  new jBox("Image", {
-    group: "portfolioGallery",
-    infinite: true,
-    closeOnClick: "overlay",
-    closeOnEsc: true,
-    ajax: false,
-    getTitle: "title",
-    offset: {
-      top: 20,
-      bottom: 20,
-    },
-    onOpen: function () {
-      this.container.on("click", (e) => {
-        if (
-          !$(e.target).closest(
-            ".jbox-content, .jbox-image-prev, .jbox-image-next"
-          ).length
-        ) {
-          this.close();
-        }
-      });
-    },
-  });
+      isSliderActive = true;
+    }
+  // } else {
+  //   // Если слайдер активен на десктопе - уничтожаем
+  //   if (isSliderActive) {
+  //     $slider.slick("unslick");
+  //     $slider.empty(); // Очищаем клонированные изображения
+  //     isSliderActive = false;
+  //   }
+  // }
 }
 
-window.addEventListener("DOMContentLoaded", createGallery);
+// Инициализация
+$(document).ready(function () {
+  manageSlider();
+
+  // Оптимизация ресайза с задержкой
+  let resizeTimer;
+  $(window).on("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(manageSlider, 250);
+  });
+});
+
+// const portfolioImages = [
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-1.webp",
+//     width: 123,
+//     height: 503,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-2.webp",
+//     width: 320,
+//     height: 320,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-3.webp",
+//     width: 323,
+//     height: 503,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-4.webp",
+//     width: 320,
+//     height: 320,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-5.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-7.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-6.webp",
+//     width: 320,
+//     height: 320,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-8.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-9.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-10.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-11.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-12.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-13.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-14.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-15.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-16.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-17.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-18.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-19.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-20.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-21.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-22.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-23.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-24.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-25.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-26.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-27.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-28.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-29.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-30.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-31.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-32.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-33.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-35.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-36.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-37.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-38.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-40.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-41.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-42.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-39.webp",
+//     width: 323,
+//     height: 502,
+//   },
+//   {
+//     src: "./public/assets/images/portfolio/portfolio-img-34.webp",
+//     width: 323,
+//     height: 502,
+//   },
+// ];
+
+/* -------------------------------------------- */
+
+// function createGallery() {
+//   const gallery = document.querySelector(".portfolio__gallery");
+//   const slider = document.querySelector(".slider-for");
+
+//   gallery.innerHTML = "";
+//   slider.innerHTML = "";
+
+//   portfolioImages.forEach((img) => {
+//     const imgContainer = document.createElement("div");
+//     imgContainer.className = "portfolio__img";
+//     imgContainer.style.width = `${img.width}px`;
+
+//     const imgElement = document.createElement("img");
+//     imgElement.src = img.src;
+//     imgElement.alt = "Пример работ";
+
+//     imgContainer.appendChild(imgElement);
+//     gallery.appendChild(imgContainer);
+
+//     // Для слайдера
+//     const slide = document.createElement("div");
+//     const slideImg = document.createElement("img");
+//     slideImg.src = img.src;
+//     slideImg.alt = "Пример работ";
+//     slide.appendChild(slideImg);
+//     slider.appendChild(slide);
+//     // gallery.appendChild(imgContainer);
+//   });
+
+//   /* Masonry после загрузки изображений*/
+//   $(document).ready(function () {
+//     var $gallery = $(".portfolio__gallery").imagesLoaded(function () {
+//       $gallery.masonry({
+//         itemSelector: ".portfolio__img",
+//         /*-323*/
+//         columnWidth: 323,
+//         gutter: 20,
+//         fitWidth: true,
+//         stagger: 30,
+//       });
+//     });
+//   });
+
+//   const mediaQuery = window.matchMedia("(max-width: 1280px)");
+
+//   function handleWidthChange(e) {
+//     if (e.matches) {
+//       $(".slider-for").slick({
+//         infinite: true,
+//         adaptiveHeight: true,
+//         responsive: [
+//           {
+//             breakpoint: 1280,
+//             settings: { slidesToShow: 3, slidesToScroll: 3 },
+//           },
+//           {
+//             breakpoint: 1024,
+//             settings: { slidesToShow: 2, slidesToScroll: 2 },
+//           },
+//           {
+//             breakpoint: 768,
+//             settings: { slidesToShow: 1, slidesToScroll: 1, arrows: false },
+//           },
+//         ],
+//       });
+//     } else {
+//       if ($(".slider-for").hasClass("slick-initialized")) {
+//         $(".slider-for").slick("unslick");
+//       }
+//     }
+//   }
+
+//   mediaQuery.addListener(handleWidthChange);
+//   handleWidthChange(mediaQuery);
+// }
+
+// window.addEventListener("DOMContentLoaded", createGallery);
