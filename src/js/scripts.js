@@ -116,6 +116,7 @@ function manageSlider() {
         },
       ],
     });
+
     isSliderActive = true;
   }
   // } else {
@@ -130,6 +131,13 @@ function manageSlider() {
 
 // Инициализация
 $(document).ready(function () {
+  $(document).on(
+    "click",
+    ".portfolio__img, .portfolio__img--slider",
+    function () {
+      portfolioFullscreen($(this).attr("src"));
+    }
+  );
   manageSlider();
 
   // Оптимизация ресайза с задержкой
