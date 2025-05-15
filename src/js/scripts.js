@@ -153,12 +153,19 @@ $(document).ready(function () {
 /* IMG OPENING ONCLICK*/
 function portfolioFullscreen(imgLink) {
   const fullscreenElement = document.getElementById("portfolio__fullscreen");
+  const imgElement = document.getElementById("portfolio__image__full");
 
-  document.getElementById("portfolio__image__full").src = imgLink;
+  fullscreenElement.classList.remove("fade-out-fwd");
+  fullscreenElement.classList.add("active", "fade-in-fwd");
+
+  imgElement.src = imgLink;
   fullscreenElement.style.display = "flex";
   document.body.style.overflow = "hidden";
+
   fullscreenElement.style.justifyContent = "center";
   fullscreenElement.style.alignItems = "center";
+
+  fullscreenElement.classList.add("visible");
 
   fullscreenElement.addEventListener("click", handleBackdropClick);
   document.addEventListener("keydown", handleEscPress);
@@ -167,8 +174,30 @@ function portfolioFullscreen(imgLink) {
 function closeFullscreen() {
   const fullscreenElement = document.getElementById("portfolio__fullscreen");
 
-  fullscreenElement.style.display = "none";
-  document.body.style.overflow = "auto";
+  fullscreenElement.addEventListener(
+    "animationend",
+    () => {
+      fullscreenElement.style.display = "none";
+      document.body.style.overflow = "auto";
+      fullscreenElement.classList.remove("fade-out-fwd", "visible");
+    },
+    { once: true }
+  );
+
+  fullscreenElement.classList.remove("fade-in-fwd");
+  fullscreenElement.classList.add("fade-out-fwd");
+
+  // fullscreenElement.addEventListener(
+  //   "animationend",
+  //   () => {
+  //     fullscreenElement.classList.remove("active", "fade-out-fwd");
+  //     document.body.style.overflow = "auto";
+  //   },
+  //   { once: true }
+  // );
+
+  // fullscreenElement.style.display = "none";
+  // document.body.style.overflow = "auto";
 
   fullscreenElement.removeEventListener("click", handleBackdropClick);
   document.removeEventListener("keydown", handleEscPress);
