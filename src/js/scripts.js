@@ -88,6 +88,8 @@ function manageSlider() {
       .appendTo($slider);
 
     $slider.slick({
+      accessibility: true, // Включить доступность
+      focusOnSelect: false, // Отключить автофокус
       slidesToShow: 1,
       slidesToScroll: 1,
       infinite: true,
@@ -150,17 +152,38 @@ $(document).ready(function () {
 
 /* IMG OPENING ONCLICK*/
 function portfolioFullscreen(imgLink) {
+  const fullscreenElement = document.getElementById("portfolio__fullscreen");
+
   document.getElementById("portfolio__image__full").src = imgLink;
-  document.getElementById("portfolio__fullscreen").style.display = "flex";
+  fullscreenElement.style.display = "flex";
   document.body.style.overflow = "hidden";
-  document.getElementById("portfolio__fullscreen").style.justifyContent =
-    "center";
-  document.getElementById("portfolio__fullscreen").style.alignItems = "center";
+  fullscreenElement.style.justifyContent = "center";
+  fullscreenElement.style.alignItems = "center";
+
+  fullscreenElement.addEventListener("click", handleBackdropClick);
+  document.addEventListener("keydown", handleEscPress);
 }
 
 function closeFullscreen() {
-  document.getElementById("portfolio__fullscreen").style.display = "none";
+  const fullscreenElement = document.getElementById("portfolio__fullscreen");
+
+  fullscreenElement.style.display = "none";
   document.body.style.overflow = "auto";
+
+  fullscreenElement.removeEventListener("click", handleBackdropClick);
+  document.removeEventListener("keydown", handleEscPress);
+}
+
+function handleBackdropClick(event) {
+  if (event.target === document.getElementById("portfolio__fullscreen")) {
+    closeFullscreen();
+  }
+}
+
+function handleEscPress(event) {
+  if (event.key === "Escape" || event.keyCode === 27) {
+    closeFullscreen();
+  }
 }
 /* IMG OPENING ONCLICK*/
 
