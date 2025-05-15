@@ -95,6 +95,11 @@
     position: relative;
 }
 
+.jBox-overlay.jBox-overlay-Modal {
+    width: 98%;
+    box-shadow: 0 0 0 100vmax $dark-color-services;
+}
+
 .jBox-Modal {
     padding-bottom: 30px;
     /*-991*/

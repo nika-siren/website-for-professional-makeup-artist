@@ -1,4 +1,13 @@
+html {
+    scrollbar-gutter: stable;
+    // overflow-y: overlay;
+}
+
 /* gallery */
+
+.portfolio__container {
+    position: relative;
+}
 
 .portfolio__gallery--main {
     // max-width: 1400px;
@@ -8,6 +17,20 @@
     columns: 3;
     column-gap: 35px;
 }
+
+.portfolio__gallery--main::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 430px;
+    background: $light-purple-color;
+    z-index: -1;
+}
+
+
 
 .portfolio__gallery--main .portfolio__gallery {
     width: 100%;
@@ -30,19 +53,30 @@
 #portfolio__fullscreen {
     display: none;
     position: fixed;
-    
+    opacity: 0;
+
     top: 0;
     left: 0;
-    width: 100%;
+    padding-left: calc(100vw - 100%);
+    width: 98%;
     height: 100%;
     background-color: $dark-color-opacity;
-    // text-align: center;
+    box-shadow: 0 0 0 100vmax $dark-color-opacity;
+    scrollbar-gutter: stable;
+    /* Фикс для Firefox */
+}
+
+#portfolio__fullscreen.visible {
+    opacity: 1;
 }
 
 #portfolio__image__full {
     // padding: 24px;
     max-width: 95%;
     max-height: 95%;
+
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
 }
 
 #portfolio__close__btn {
@@ -59,6 +93,42 @@
 #portfolio__close__btn:hover {
     opacity: 1;
 }
+
+/* АНИМАЦИИ */
+
+.fade-in-fwd {
+    animation: fade-in-fwd 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) forwards;
+}
+
+.fade-out-fwd {
+    animation: fade-out-fwd 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes fade-in-fwd {
+    0% {
+        transform: translateZ(-80px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out-fwd {
+    0% {
+        transform: translateZ(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateZ(80px);
+        opacity: 0;
+    }
+}
+
+/* АНИМАЦИИ */
 
 @media (max-width: 1441px) {
     .portfolio__gallery--main .portfolio__gallery img {
@@ -89,6 +159,32 @@
 @media (min-width: 769px) {
     .portfolio__slider--main {
         display: none;
+    }
+
+    /*прямоугольник сверху*/
+    .portfolio__gallery--main::after {
+        content: '';
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 430px;
+        background: $light-purple-color;
+        z-index: -1;
+    }
+
+    /* прямоугольник снизу */
+    .portfolio__container::after {
+        content: '';
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 430px;
+        background: $light-purple-color;
+        z-index: -1;
     }
 }
 
@@ -165,9 +261,7 @@
 //     }
 // }
 
-// .portfolio__container {
-//     position: relative;
-// }
+
 
 // /* gallery*/
 
