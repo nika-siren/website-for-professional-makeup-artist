@@ -18,6 +18,46 @@
 .portfolio__gallery--main .portfolio__gallery img {
     max-width: 100%;
     margin: 20px auto 20px;
+    transition: all 0.3s ease;
+}
+
+.portfolio__gallery--main .portfolio__gallery img:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 0 5px $dark-color-opacity;
+}
+
+#portfolio__fullscreen {
+    display: none;
+    position: fixed;
+    
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $dark-color-opacity;
+    // text-align: center;
+}
+
+#portfolio__image__full {
+    // padding: 24px;
+    max-width: 95%;
+    max-height: 95%;
+}
+
+#portfolio__close__btn {
+    position: fixed;
+    top: 0;
+    right: 2%;
+    color: $light-color;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+#portfolio__close__btn:hover {
+    opacity: 1;
 }
 
 @media (max-width: 1441px) {

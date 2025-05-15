@@ -77,47 +77,47 @@ function manageSlider() {
   const $slider = $(".portfolio-slider-mobile");
 
   // if ($(window).width() <= 768) {
-    // Если слайдер еще не активирован
-    if (!isSliderActive) {
-      // Клонируем изображения только один раз
-      $gallery
-        .find(".portfolio__img")
-        .clone()
-        .removeClass("portfolio__img")
-        .addClass("portfolio__img--slider")
-        .appendTo($slider);
+  // Если слайдер еще не активирован
+  if (!isSliderActive) {
+    // Клонируем изображения только один раз
+    $gallery
+      .find(".portfolio__img")
+      .clone()
+      .removeClass("portfolio__img")
+      .addClass("portfolio__img--slider")
+      .appendTo($slider);
 
-      $slider.slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        adaptiveHeight: true,
-        responsive: [
-          // {
-          //   breakpoint: 794,
-          //   settings: {
-          //     slidesToShow: 3,
-          //     slidesToScroll: 3,
-          //   },
-          // },
-          {
-            breakpoint: 638,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            },
+    $slider.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: true,
+      adaptiveHeight: true,
+      responsive: [
+        // {
+        //   breakpoint: 794,
+        //   settings: {
+        //     slidesToShow: 3,
+        //     slidesToScroll: 3,
+        //   },
+        // },
+        {
+          breakpoint: 638,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
           },
-          {
-            breakpoint: 455,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            },
+        },
+        {
+          breakpoint: 455,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
           },
-        ],
-      });
-      isSliderActive = true;
-    }
+        },
+      ],
+    });
+    isSliderActive = true;
+  }
   // } else {
   //   // Если слайдер активен на десктопе - уничтожаем
   //   if (isSliderActive) {
@@ -139,6 +139,22 @@ $(document).ready(function () {
     resizeTimer = setTimeout(manageSlider, 250);
   });
 });
+
+/* IMG OPENING ONCLICK*/
+function portfolioFullscreen(imgLink) {
+  document.getElementById("portfolio__image__full").src = imgLink;
+  document.getElementById("portfolio__fullscreen").style.display = "flex";
+  document.body.style.overflow = "hidden";
+  document.getElementById("portfolio__fullscreen").style.justifyContent =
+    "center";
+  document.getElementById("portfolio__fullscreen").style.alignItems = "center";
+}
+
+function closeFullscreen() {
+  document.getElementById("portfolio__fullscreen").style.display = "none";
+  document.body.style.overflow = "auto";
+}
+/* IMG OPENING ONCLICK*/
 
 // const portfolioImages = [
 //   {
