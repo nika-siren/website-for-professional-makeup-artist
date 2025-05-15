@@ -73,7 +73,7 @@
 
     color: $purple-color;
     white-space: normal;
-    transition: transform 0.3s;
+    // transition: transform 0.3s;
 
     /*min15px max35px*/
     max-height: clamp(0.938rem, 0.586rem + 2.809vw, 2.188rem);

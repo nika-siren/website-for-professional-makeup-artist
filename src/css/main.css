@@ -12,7 +12,8 @@
 .about__experience,
 h2,
 .contacts__text,
-.services__h2--modal {
+.services__h2--modal,
+#portfolio__close__btn {
   font-family: "Moniqa", Times, sans-serif;
   font-style: normal;
   font-size: clamp(2.75rem, 2.561rem + 1.439vw, 4rem);
@@ -281,7 +282,6 @@ body {
   /* Увеличен размер шрифта */
   color: #724C9D;
   white-space: normal;
-  transition: transform 0.3s;
   /*min15px max35px*/
   max-height: clamp(0.938rem, 0.586rem + 2.809vw, 2.188rem);
   padding: 20px 15px;
@@ -496,6 +496,43 @@ body {
 .portfolio__gallery--main .portfolio__gallery img {
   max-width: 100%;
   margin: 20px auto 20px;
+  transition: all 0.3s ease;
+}
+
+.portfolio__gallery--main .portfolio__gallery img:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8666666667);
+}
+
+#portfolio__fullscreen {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8666666667);
+}
+
+#portfolio__image__full {
+  max-width: 95%;
+  max-height: 95%;
+}
+
+#portfolio__close__btn {
+  position: fixed;
+  top: 0;
+  right: 2%;
+  color: #FFFFFF;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+#portfolio__close__btn:hover {
+  opacity: 1;
 }
 
 @media (max-width: 1441px) {

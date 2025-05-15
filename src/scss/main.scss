@@ -15,7 +15,8 @@ body {
 .about__experience,
 h2,
 .contacts__text,
-.services__h2--modal {
+.services__h2--modal,
+#portfolio__close__btn {
     @extend %primary-font;
 }
 
