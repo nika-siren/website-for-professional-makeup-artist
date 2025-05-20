@@ -1,5 +1,6 @@
 /* mobile header*/
 
+const mobileHeader = document.querySelector(".mobile__header-container");
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 const contactBtn = document.querySelector(".preview__container--btn--main");
@@ -9,11 +10,13 @@ hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   navMenu.classList.toggle("active");
   if (navMenu.classList.contains("active")) {
-    contactBtn.style.display = "none";
-    servicesBtns.forEach((btn) => (btn.style.display = "none"));
+    document.body.style.overflow = "hidden";
+    // contactBtn.style.display = "none";
+    // servicesBtns.forEach((btn) => (btn.style.display = "none"));
   } else {
-    contactBtn.style.display = "block";
-    servicesBtns.forEach((btn) => (btn.style.display = "block"));
+    document.body.style.overflow = "auto";
+    // contactBtn.style.display = "block";
+    // servicesBtns.forEach((btn) => (btn.style.display = "block"));
   }
 });
 
@@ -21,8 +24,9 @@ document.querySelectorAll(".mobile-header__item").forEach((n) =>
   n.addEventListener("click", () => {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
-    contactBtn.style.display = "block";
-    servicesBtns.forEach((btn) => (btn.style.display = "block"));
+    document.body.style.overflow = "auto";
+    // contactBtn.style.display = "block";
+    // servicesBtns.forEach((btn) => (btn.style.display = "block"));
   })
 );
 
@@ -31,6 +35,8 @@ document.querySelectorAll(".mobile-header__item").forEach((n) =>
 $(document).ready(function () {
   $(".services__btn").click(function (e) {
     e.preventDefault();
+    mobileHeader.style.display = "none";
+
     const item = $(this).closest(".services__item");
 
     const title = item.data("title");
@@ -62,6 +68,8 @@ $(document).ready(function () {
           <p class="${textClass}">${content}</p>
         </div>`,
       title: `<span class="services__h2--modal">${title}</span>`,
+      onOpen: () => (mobileHeader.style.display = "none"),
+      onClose: () => (mobileHeader.style.display = ""),
     });
 
     modal.open();
@@ -152,6 +160,8 @@ $(document).ready(function () {
 
 /* IMG OPENING ONCLICK*/
 function portfolioFullscreen(imgLink) {
+  mobileHeader.style.display = "none";
+
   const fullscreenElement = document.getElementById("portfolio__fullscreen");
   const imgElement = document.getElementById("portfolio__image__full");
 
@@ -172,6 +182,8 @@ function portfolioFullscreen(imgLink) {
 }
 
 function closeFullscreen() {
+  mobileHeader.style.display = "";
+
   const fullscreenElement = document.getElementById("portfolio__fullscreen");
 
   fullscreenElement.addEventListener(

@@ -32,6 +32,10 @@ body {
   font-family: "MoniqaBd", Times, sans-serif;
 }
 
+:root {
+  --preview-opacity: 0.5;
+}
+
 .about__text--main {
   display: grid;
   justify-items: center;
@@ -212,6 +216,10 @@ body {
   }
 }
 /* MOBILE HEADER */
+.mobile__header-container {
+  z-index: 30000;
+}
+
 .hamburger {
   display: block;
   position: fixed;
@@ -239,7 +247,7 @@ body {
   margin: 5px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: #FFFFFF;
+  background-color: rgba(114, 76, 157, var(--preview-opacity));
 }
 
 .hamburger.active .bar {
@@ -531,7 +539,7 @@ html {
   opacity: 0;
   top: 0;
   left: 0;
-  padding-left: calc(100vw - 100%);
+  padding-left: calc(100vw - 99%);
   width: 98%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8666666667);

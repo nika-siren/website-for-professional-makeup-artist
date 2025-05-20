@@ -1,4 +1,9 @@
 /* MOBILE HEADER */
+.mobile__header-container {
+    z-index: 30000;
+    // transition: all .3s ease;
+}
+
 .hamburger {
     display: block;
     position: fixed;
@@ -26,7 +31,7 @@
     margin: 5px;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background-color: $light-color;
+    background-color: rgba($light-purple-color, var(--preview-opacity));
 }
 
 .hamburger.active .bar {
