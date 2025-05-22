@@ -51,6 +51,7 @@ html {
 }
 
 #portfolio__fullscreen {
+    z-index: 10000;
     display: none;
     position: fixed;
     opacity: 0;

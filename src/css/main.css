@@ -217,6 +217,7 @@ body {
 }
 #contacts {
   background-color: rgba(114, 76, 157, 0.23);
+  z-index: 1;
 }
 
 .contacts__link,
@@ -760,6 +761,7 @@ html {
 }
 
 #portfolio__fullscreen {
+  z-index: 10000;
   display: none;
   position: fixed;
   opacity: 0;
