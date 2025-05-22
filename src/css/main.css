@@ -701,6 +701,19 @@ body {
     padding-left: clamp(1.875rem, 1.272rem + 3.861vw, 3.125rem);
   }
 }
+.items__container {
+  padding-bottom: 8%;
+}
+
+.items__container p {
+  text-align: center;
+}
+
+.items__container p a {
+  text-decoration: none;
+  color: #724C9D;
+}
+
 html {
   scrollbar-gutter: stable;
 }
