@@ -1072,6 +1072,11 @@ html {
 #services__modal--individual,
 #services__text--individual-2 {
   font-weight: 200;
+}
+
+.services__text--modal,
+#services__modal--individual,
+#services__text--individual-2 {
   line-height: 1.2;
 }
 
@@ -1082,6 +1087,10 @@ html {
 .services__text--modal,
 .services__text--modal--short {
   text-align: left;
+}
+
+.services__text--modal {
+  align-self: center;
 }
 
 .services__modals__ul {
@@ -1143,7 +1152,7 @@ html {
   .services__item--modal--short {
     flex-direction: row;
     justify-content: space-around;
-    height: 1100px;
+    height: 1200px;
   }
   .services__img--modal--short {
     height: 800px;
@@ -1159,8 +1168,8 @@ html {
 }
 @media (min-width: 1024px) and (max-width: 1920px) {
   .services__item--modal--short {
-    /*750-1400*/
-    height: clamp(46.875rem, 0.446rem + 72.545vw, 87.5rem);
+    /*850-1400*/
+    height: clamp(53.125rem, 13.839rem + 61.384vw, 87.5rem);
   }
   .services__text--modal--short {
     /*700-1350 1024-1920*/
@@ -1217,8 +1226,8 @@ html {
     max-width: clamp(12.5rem, -6.25rem + 39.063vw, 18.75rem);
   }
   .services__item--modal--short {
-    /*620-800*/
-    height: clamp(38.75rem, 5rem + 70.313vw, 50rem);
+    /*720-850*/
+    height: clamp(45rem, 20.625rem + 50.781vw, 53.125rem);
     gap: 15px;
   }
   .services__text--modal--short {
@@ -1262,8 +1271,8 @@ html {
     max-width: clamp(13.125rem, 7.394rem + 36.68vw, 25rem);
   }
   .services__item--modal--short {
-    /*400-550*/
-    height: clamp(25rem, 18.99rem + 32.051vw, 34.375rem);
+    /*400-670*/
+    height: clamp(25rem, 14.183rem + 57.692vw, 41.875rem);
     gap: 15px;
   }
   .services__text--modal--short {
