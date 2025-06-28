@@ -29,7 +29,8 @@ h2,
 .about__text,
 .items__text,
 .services__text--modal,
-.services__text--modal--short {
+.services__text--modal--short,
+.services__modal__li {
     /*5-30*/
     font-size: clamp(0.313rem, 0.079rem + 1.497vw, 1.875rem);
 }
@@ -40,6 +41,16 @@ h2,
     /*21-84*/
     font-size: clamp(1.313rem, 0.485rem + 5.294vw, 5.25rem);
     color: $purple-color;
+}
+
+h3 {
+    //12-30
+    font-size: clamp(0.75rem, 0.542rem + 1.111vw, 1.875rem);
+}
+
+.services__modal__ul .h4__services__modal {
+    //10-25
+    font-size: clamp(0.625rem, 0.451rem + 0.926vw, 1.563rem);
 }
 
 h2 {

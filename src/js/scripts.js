@@ -41,13 +41,28 @@ $(document).ready(function () {
 
     const title = item.data("title");
     const content = item.data("content");
+    const [contentTop, contentBottom] = content.split("<!-- split -->");
     const image = item.data("image");
+    const serviceId = item.index();
 
     let imgClass = "services__img--modal";
     let modalClass = "services__item--modal";
     let textClass = "services__text--modal";
+    let contentStructure;
+    let modalId = "";
 
-    if (
+    // 2 БЛОК Уникальная структура для обычных модалей
+    if (serviceId === 1) {
+      const [contentTop, contentBottom] = content.split("<!-- split --!>");
+      modalId = "individual-training-modal"; // Уникальный ID для второй услуги
+
+      contentStructure = `
+      <div id="services__modal--individual">
+        <img class="${imgClass}" src="${image}" alt="${title}">
+        <div id="services__text--individual">${contentTop}</div>
+      </div>
+      <div id="services__text--individual-2">${contentBottom}</div>`;
+    } else if (
       image.includes("services-modal-3") ||
       image.includes("services-modal-4") ||
       image.includes("services-modal-5")
@@ -55,6 +70,16 @@ $(document).ready(function () {
       imgClass = "services__img--modal--short";
       modalClass = "services__item--modal--short";
       textClass = "services__text--modal--short";
+
+      // 3 4 5 БЛОКИ Структура для short-модалей
+      contentStructure = `
+        <img class="${imgClass}" src="${image}" alt="${title}">
+        <div class="${textClass}">${content}</div>`;
+    } else {
+      // 1 И 2 БЛОКИ Стандартная структура для обычных модалей
+      contentStructure = `
+        <img class="${imgClass}" src="${image}" alt="${title}">
+        <div class="${textClass}">${content}</div>`;
     }
 
     const modal = new jBox("Modal", {
@@ -63,9 +88,8 @@ $(document).ready(function () {
       height: "clamp(28.125rem, 23.495rem + 24.691vw, 53.125rem)",
       // createOnInit: true,
       content: `
-        <div class="${modalClass}">
-          <img class="${imgClass}" src="${image}" alt="${title}">
-          <p class="${textClass}">${content}</p>
+        <div class="${modalClass}" ${modalId ? `id="${modalId}"` : ""}>
+          ${contentStructure}
         </div>`,
       title: `<span class="services__h2--modal">${title}</span>`,
       onOpen: () => (mobileHeader.style.display = "none"),

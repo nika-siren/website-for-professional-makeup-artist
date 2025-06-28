@@ -102,7 +102,6 @@
 
 .jBox-Modal {
     padding-bottom: 30px;
-    /*-991*/
     // max-height: 960px;
 }
 
@@ -142,12 +141,122 @@
     height: 85%;
 }
 
-.services__text--modal,
-.services__text--modal--short,
+// .services__text--modal,
+// .services__text--modal--short,
 .services__item--modal--short {
     text-align: center;
     align-self: center;
     // padding-left: 300px;
+}
+
+.services__text--modal,
+.services__text--modal--short,
+#services__modal--individual,
+#services__text--individual-2 {
+    font-weight: 200;
+    line-height: 1.2;
+}
+
+.services__modal__div {
+    width: 70%;
+}
+
+.services__text--modal,
+.services__text--modal--short {
+    text-align: left;
+}
+
+.services__modals__ul {
+    text-indent: -1.5em;
+}
+
+.h3__services__modal,
+.h4__services__modal {
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: $purple-color;
+    letter-spacing: 5px;
+}
+
+.lalalatest {
+    display: flex;
+
+}
+
+#individual-training-modal {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+
+    width: 95%;
+    height: 1000px;
+
+    // grid-template-columns: 1fr 1fr;
+    // grid-template-rows: 1fr 1fr 1fr;
+    // gap: 0px 0px;
+    // grid-auto-flow: row;
+    // grid-template-areas:
+    //     "img1 text1"
+    //     "img1 text1"
+    //     "text2 text2";
+}
+
+#services__modal--individual {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 50px;
+    width: 100%;
+    height: 60%;
+}
+
+// IMG ИНДИВИДУАЛЬНОЕ ОБУЧЕНИЕ МОДАЛ
+#individual-training-modal img {
+    //350-600
+    height: clamp(21.875rem, 4.018rem + 27.902vw, 37.5rem);
+    // width: 32%;
+    align-self: center;
+}
+
+#services__text--individual {
+    max-width: 460px;
+}
+
+#services__individual__div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+// .text1 {
+//     grid-area: text1;
+// }
+
+// .img1 {
+//     grid-area: img1;
+// }
+
+// .text2 {
+//     grid-area: text2;
+// }
+
+
+// .list-marker {
+//     display: inline-block;
+//     margin-right: 8px;
+// }
+
+// .services__text--modal p,
+// .services__text--modal--short p {
+//     margin-bottom: 10px;
+//     /* Отступ между параграфами */
+// }
+
+.services__modals__ul {
+    list-style: none;
 }
 
 @media (min-width: 1920px) {
@@ -163,6 +272,13 @@
 
     .services__text--modal--short {
         max-width: 450px;
+    }
+}
+
+@media (min-width: 1366px) {
+    #individual-training-modal {
+        //1200-1550
+        height: clamp(75rem, 21.063rem + 63.177vw, 96.875rem);
     }
 }
 
@@ -260,6 +376,10 @@
         /*12-15 73-80*/
         padding: clamp(0.75rem, 0.188rem + 1.172vw, 0.938rem) clamp(4.563rem, 3.25rem + 2.734vw, 5rem);
     }
+
+    #individual-training-modal {
+        height: 800px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -317,6 +437,24 @@
         padding: clamp(0.063rem, -0.269rem + 2.124vw, 0.75rem) clamp(1.563rem, 0.115rem + 9.266vw, 4.563rem);
         /*0.2-0.8*/
         border: clamp(0.013rem, -0.012rem + 0.128vw, 0.05rem) solid $purple-color;
+    }
+
+    #individual-training-modal {
+        //785-1300
+        height: clamp(49.063rem, 28.429rem + 110.043vw, 81.25rem);
+    }
+
+    #individual-training-modal img {
+        justify-self: center;
+        //200-400
+        height: clamp(9.375rem, -0.662rem + 53.533vw, 25rem);
+    }
+
+    #services__modal--individual {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
     }
 }
 
