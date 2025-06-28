@@ -1025,7 +1025,6 @@ html {
 
 .jBox-Modal {
   padding-bottom: 30px;
-  /*-991*/
 }
 
 .jBox-Modal .jBox-container {
@@ -1063,11 +1062,81 @@ html {
   height: 85%;
 }
 
-.services__text--modal,
-.services__text--modal--short,
 .services__item--modal--short {
   text-align: center;
   align-self: center;
+}
+
+.services__text--modal,
+.services__text--modal--short,
+#services__modal--individual,
+#services__text--individual-2 {
+  font-weight: 200;
+  line-height: 1.2;
+}
+
+.services__modal__div {
+  width: 70%;
+}
+
+.services__text--modal,
+.services__text--modal--short {
+  text-align: left;
+}
+
+.services__modals__ul {
+  text-indent: -1.5em;
+}
+
+.h3__services__modal,
+.h4__services__modal {
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  color: #724C9D;
+  letter-spacing: 5px;
+}
+
+.lalalatest {
+  display: flex;
+}
+
+#individual-training-modal {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  width: 95%;
+  height: 1000px;
+}
+
+#services__modal--individual {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 50px;
+  width: 100%;
+  height: 60%;
+}
+
+#individual-training-modal img {
+  height: clamp(21.875rem, 4.018rem + 27.902vw, 37.5rem);
+  align-self: center;
+}
+
+#services__text--individual {
+  max-width: 460px;
+}
+
+#services__individual__div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.services__modals__ul {
+  list-style: none;
 }
 
 @media (min-width: 1920px) {
@@ -1081,6 +1150,11 @@ html {
   }
   .services__text--modal--short {
     max-width: 450px;
+  }
+}
+@media (min-width: 1366px) {
+  #individual-training-modal {
+    height: clamp(75rem, 21.063rem + 63.177vw, 96.875rem);
   }
 }
 @media (min-width: 1024px) and (max-width: 1920px) {
@@ -1159,6 +1233,9 @@ html {
     /*12-15 73-80*/
     padding: clamp(0.75rem, 0.188rem + 1.172vw, 0.938rem) clamp(4.563rem, 3.25rem + 2.734vw, 5rem);
   }
+  #individual-training-modal {
+    height: 800px;
+  }
 }
 @media (max-width: 768px) {
   .services__h2--modal {
@@ -1208,6 +1285,19 @@ html {
     /*0.2-0.8*/
     border: clamp(0.013rem, -0.012rem + 0.128vw, 0.05rem) solid #724C9D;
   }
+  #individual-training-modal {
+    height: clamp(49.063rem, 28.429rem + 110.043vw, 81.25rem);
+  }
+  #individual-training-modal img {
+    justify-self: center;
+    height: clamp(9.375rem, -0.662rem + 53.533vw, 25rem);
+  }
+  #services__modal--individual {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
 }
 @media (max-width: 540px) {
   .jBox-Modal .jBox-container .jBox-content {
@@ -1235,7 +1325,8 @@ html {
 .about__text,
 .items__text,
 .services__text--modal,
-.services__text--modal--short {
+.services__text--modal--short,
+.services__modal__li {
   /*5-30*/
   font-size: clamp(0.313rem, 0.079rem + 1.497vw, 1.875rem);
 }
@@ -1246,6 +1337,14 @@ h2,
   /*21-84*/
   font-size: clamp(1.313rem, 0.485rem + 5.294vw, 5.25rem);
   color: #724C9D;
+}
+
+h3 {
+  font-size: clamp(0.75rem, 0.542rem + 1.111vw, 1.875rem);
+}
+
+.services__modal__ul .h4__services__modal {
+  font-size: clamp(0.625rem, 0.451rem + 0.926vw, 1.563rem);
 }
 
 h2 {
